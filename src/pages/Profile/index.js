@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { api } from "../../api/api";
 
 export function Profile() {
@@ -23,7 +23,13 @@ export function Profile() {
     <>
       <h1>{user.name}</h1>
       <p>{user.email}</p>
+      
+      <Link to="/receitas">
+    <button>Receitas</button>
+  </Link>
+      
       <button onClick={handleLogOut}>Sair</button>
+
     </>
   );
 }
