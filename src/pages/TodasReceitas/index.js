@@ -2,6 +2,7 @@ import { api } from "../../api/api"
 import { useState,useEffect,useContext } from "react"
 import { AuthContext  } from "../../contexts/authContext"
 import { Link } from "react-router-dom";
+import { CriarComentario } from "../CriarComentario";
 
 
 
@@ -32,6 +33,7 @@ export function TodasReceitas(){
                         <p>{cR.ingredientes}</p>
                         <p>{cR.modoDePreparo}</p>
                         <p>{cR.tempoDePreparo}</p>
+                        <CriarComentario/>
                         <button>Apagar receita</button>
                         {/* <Link><button>Editar receita.</button> </Link> */}
                     </div>

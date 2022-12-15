@@ -1,12 +1,16 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { api } from "../../api/api";
+import { CriarComentario } from "../CriarComentario";
 
 
 export function ReceitaDetalhada() {
   const {id} = useParams();
 
-  const [receitas, setReceitas] = useState({});
+  const [receitas, setReceitas] = useState({
+    name:"",
+    comentario:[]
+  });
 
 
   useEffect(() => {
@@ -14,6 +18,8 @@ export function ReceitaDetalhada() {
       try {
         
         const response = await api.get(`/receitas/${id}`);
+        
+
 
        
         setReceitas(response.data);
@@ -25,11 +31,19 @@ export function ReceitaDetalhada() {
     fetchReceitas();
   }, []);
 
-
+console.log(receitas)
 
   return(
     <>
-     {receitas.name}
+
+    <div>
+     <h1>{receitas.name}</h1>
+     {receitas.comentario.map((cE) => {
+      return(
+      <p>{cE.comentario}</p>)
+     })}
+     <CriarComentario/>
+     </div>
     </>
   )
 

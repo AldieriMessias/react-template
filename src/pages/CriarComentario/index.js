@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { api } from "../../api/api"
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 
 export function CriarComentario(){
@@ -17,13 +17,17 @@ export function CriarComentario(){
         setForm({...form, [e.target.name]: e.target.value });
     }
 
+const {id} = useParams()
+
+
     async function handleSubmit(e){
         e.preventDefault()
 
         try{
-            await api.post("/comentarios", form)
+            await api.post(`/comentarios/${id}/comentario`, form)
+            window.location.reload();
 
-            navigate("/comentarios")
+
 
         }catch(err){
             console.log(err)
