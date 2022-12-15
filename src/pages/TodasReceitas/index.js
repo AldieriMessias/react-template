@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 
 
-export function Receitas(){
+export function TodasReceitas(){
     const [receitas, setReceitas] = useState([]);
 
     // const {loggedInUser} = useContext(AuthContext);
@@ -27,12 +27,14 @@ export function Receitas(){
         <>
             {receitas.map((cR)=>{
                 return(
-                    <Link to={`/receitas/${cR._id}`}>
-                        <div>
-                        {/* <Link> <h2>{cR.name}</h2></Link> */}
+                    <div>
                         <h2>{cR.name}</h2>
-                        </div>
-                    </Link>    
+                        <p>{cR.ingredientes}</p>
+                        <p>{cR.modoDePreparo}</p>
+                        <p>{cR.tempoDePreparo}</p>
+                        <button>Apagar receita</button>
+                        {/* <Link><button>Editar receita.</button> </Link> */}
+                    </div>
                 )
             })}
 
