@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ProtectedRouteAdmin } from "../../components/ProtectedAdminRoute";
+
 import {Receitas} from "../Receita"
 
 
