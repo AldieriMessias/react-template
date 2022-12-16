@@ -22,6 +22,7 @@ export function Home() {
           <button>Cadastrar</button>
         </Link>
         
+        
        
         <Link to="/profile">
           <button>Perfil</button>
@@ -31,6 +32,11 @@ export function Home() {
         
         <Link to="/criarreceita">
           <button>Criar receita</button>
+        </Link>
+
+
+        <Link to="/receitas">
+          <button>Receitas</button>
         </Link>
 
         </div>
