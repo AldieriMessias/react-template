@@ -35,7 +35,7 @@ export function TodasReceitas(){
         try {
           await api.delete(`/receitas/${receitaId}`);
             
-          window.location.reload();
+          navigate("/receitas")
         
         } catch (err) {
           console.log(err);
