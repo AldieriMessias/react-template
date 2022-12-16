@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { api } from "../../api/api"
 import { useNavigate, useParams } from "react-router-dom";
+import style from "./style.module.css"
 
 
 export function CriarComentario(){
@@ -37,9 +38,9 @@ const {id} = useParams()
 
 
     return (
-        <>
+        <> <div className={style.comentario} >  
         <form onSubmit={handleSubmit}>
-        <label htmlFor="input-comentario">Comentario:</label>
+        <label htmlFor="input-comentario"><strong className={style.comentarioT} >Comentario:</strong></label>
         <input
           id="input-comentario"
           type="text"
@@ -50,6 +51,8 @@ const {id} = useParams()
      
         <button type="submit">Enviar!</button>
       </form>
+
+      </div>
       </>
     )
 }

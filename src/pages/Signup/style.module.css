@@ -1,0 +1,12 @@
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.titles{
+    background-color: black;
+    color:white;
+    width: 150px;
+    padding: 0 0 0 5px;
+    margin: 10px 0 0 0;
+}

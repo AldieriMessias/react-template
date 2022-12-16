@@ -2,6 +2,8 @@ import { useState } from "react";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import style from "./style.module.css"
+import background from "../../components/Img/img5.png"
 
 export function Signup() {
   const navigate = useNavigate();
@@ -50,13 +52,13 @@ export function Signup() {
 
   return (
 
-    <>
+    <div style={{ backgroundImage: `url(${background})`, height: "95vh" }}>
       <Link to="/">
         <button>Início</button>
       </Link>
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="formName">Nome:</label>
+      <form onSubmit={handleSubmit} className={style.form} >
+        <label htmlFor="formName" className={style.titles}>Nome:</label>
         <input
           id="formName"
           name="name"
@@ -67,7 +69,7 @@ export function Signup() {
         {/* <label htmlFor="formImg">Sua foto de perfil:</label>
         <input type="file" id="formImg" onChange={handleImage} /> */}
 
-        <label htmlFor="formEmail">E-mail:</label>
+        <label htmlFor="formEmail" className={style.titles}>E-mail:</label>
         <input
           id="formEmail"
           name="email"
@@ -75,7 +77,7 @@ export function Signup() {
           value={form.email}
           onChange={handleChange}
         />
-        <label htmlFor="formPassword">Senha:</label>
+        <label htmlFor="formPassword" className={style.titles}>Senha:</label>
         <input
           id="formPassword"
           name="password"
@@ -83,7 +85,7 @@ export function Signup() {
           value={form.password}
           onChange={handleChange}
         />
-        <label htmlFor="formConfirmPassword">Confirmação de senha</label>
+        <label htmlFor="formConfirmPassword" className={style.titles}>Confirmação de senha</label>
         <input
           id="formConfirmPassword"
           type="password"
@@ -94,6 +96,6 @@ export function Signup() {
         <button type="submit">Cadastrar</button>
       </form>
 
-    </>
+    </div>
   );
 }

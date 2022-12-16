@@ -2,6 +2,8 @@ import { useState, useEffect } from "react"
 import { api } from "../../api/api"
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import style from "./style.module.css"
+import background from "../../components/Img/img4.jpeg"
 
 
 export function CriarReceita(){
@@ -75,55 +77,59 @@ export function CriarReceita(){
 
 
     return (
-        <>
+        <div  style={{ backgroundImage: `url(${background})`, height: "170vh" }}>
 
-<Link to="/">
-    <button>Início</button>
-  </Link>
+        <Link to="/">
+            <button>Início</button>
+        </Link>
 
-        <div>
+        <div className={style.form}>
 
-                <form onSubmit={handleSubmit}>
-                <label htmlFor="input-name">Nome da receita:</label>
+                <form onSubmit={handleSubmit}   className={style.form}>
+                <label htmlFor="input-name"  className={style.titles}>Nome da receita:</label>
                 <input
                   id="input-name"
                   type="text"
                   name="name"
                   value={form.name}
                   onChange={handleChange}
+                  placeholder="ex: pão de queijo"
                 />
 
-                <label htmlFor="formImg">Sua foto de perfil:</label>
+                <label htmlFor="formImg" className={style.titles}>Sua foto de perfil:</label>
                 <input type="file" id="formImg" onChange={handleImage} /> 
 
-                <label htmlFor="input-ingredientes">Ingredientes:</label>
+                <label htmlFor="input-ingredientes" className={style.titles}>Ingredientes:</label>
                 <input
                     id="input-ingredientes"
                   type="text"
                   name="ingredientes"
                   value={form.ingredientes}
                   onChange={handleChange}
+                  placeholder="ex:queijo, farinha"
                 />
-                  <label htmlFor="input-modoDePreparo">Modo de preparo:</label>
+                  <label htmlFor="input-modoDePreparo" className={style.titles}>Modo de preparo:</label>
                 <input
                     id="input-modoDePreparo"
                   type="text"
                   name="modoDePreparo"
                   value={form.modoDePreparo}
                   onChange={handleChange}
+                  placeholder="ex:misturar tudo"
                 />
-                <label htmlFor="input-tempoDePreparo">Tempo de preparo:</label>
+                <label htmlFor="input-tempoDePreparo" className={style.titles}>Tempo de preparo:</label>
                 <input
                     id="input-tempoDePreparo"
                   type="text"
                   name="tempoDePreparo"
                   value={form.tempoDePreparo}
                   onChange={handleChange}
+                  placeholder="ex: 25 minutos"
                 />
                 <button type="submit">Enviar!</button>
               </form>
 
               </div>
-      </>
+      </div>
     )
 }

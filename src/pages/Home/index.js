@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-
 import {Receitas} from "../Receita"
+import background from "../../components/Img/foto.jpg"
+import style from "./style.module.css"
 
 
 
@@ -9,8 +10,10 @@ export function Home() {
   return (
   <>
   
-  <h1>Tamo na home!</h1>
-    <div>      
+
+    <div style={{ backgroundImage: `url(${background})`, height: "170vh" }}>      
+      
+      <div className={style.btnUp}>
       <Link to="/login">
           <button>Entrar</button>
         </Link>
@@ -30,10 +33,15 @@ export function Home() {
           <button>Criar receita</button>
         </Link>
 
-        
-    </div>
+        </div>
+          
+          <h1>Receitas Proj3</h1>
 
-<Receitas/>
+          <Receitas/>
+        
+        </div>
+
+    
 
 
   </>
