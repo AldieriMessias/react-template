@@ -1,6 +1,7 @@
 import { api } from "../../api/api"
 import { useState,useEffect,useContext } from "react"
 import { AuthContext  } from "../../contexts/authContext"
+import { Link } from "react-router-dom";
 
 
 
@@ -24,6 +25,10 @@ export function Comentarios(){
 
     return(
         <>
+
+            <Link to="/">
+                <button>Início</button>
+            </Link>   
             {comentarios.map((cR)=>{
                 return(
                     <div>

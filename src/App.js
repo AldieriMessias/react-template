@@ -5,7 +5,7 @@ import { Signup } from "./pages/Signup";
 import { AuthContextComponent } from "./contexts/authContext";
 import { Profile } from "./pages/Profile";
 import { ErrorPage } from "./pages/ErrorPage";
-
+import { ProtectedRouteAdmin } from "./components/ProtectedAdminRoute";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { CriarReceita } from "./pages/CriarReceita";
 import { CriarComentario } from "./pages/CriarComentario";
@@ -27,8 +27,9 @@ function App() {
           />
 
           <Route path="*" element={<ErrorPage />} />
-          <Route path="/receitas" element={<TodasReceitas/>}/>
-          <Route path="/receitas/:id" element={<ReceitaDetalhada/>}/>
+          {/* <Route path="/receitas" element={<TodasReceitas/>}/> */}
+          <Route path="/receitas" element={<ProtectedRouteAdmin component={TodasReceitas}/>} />
+          <Route path="/receitas/:id" element={<ProtectedRoute component={ReceitaDetalhada}/>}/>
           <Route path="/criarreceita" element={<ProtectedRoute component={CriarReceita} />} />
           <Route path="/criarcomentario" element={<ProtectedRoute component={CriarComentario} />} />
           <Route path="/comentarios" element={<Comentarios />} />

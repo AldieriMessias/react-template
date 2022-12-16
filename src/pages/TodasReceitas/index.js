@@ -26,6 +26,10 @@ export function TodasReceitas(){
 
     return(
         <>
+            <Link to="/">
+                <button>Início</button>
+            </Link>
+      
             {receitas.map((cR)=>{
                 return(
                     <div>
@@ -33,7 +37,7 @@ export function TodasReceitas(){
                         <p>{cR.ingredientes}</p>
                         <p>{cR.modoDePreparo}</p>
                         <p>{cR.tempoDePreparo}</p>
-                        <CriarComentario/>
+                        
                         <button>Apagar receita</button>
                         {/* <Link><button>Editar receita.</button> </Link> */}
                     </div>

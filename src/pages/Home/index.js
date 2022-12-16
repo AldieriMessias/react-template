@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
+import { ProtectedRouteAdmin } from "../../components/ProtectedAdminRoute";
 import {Receitas} from "../Receita"
+
+
 
 
 export function Home() {
@@ -21,13 +24,13 @@ export function Home() {
           <button>Perfil</button>
         </Link>
 
-        <Link to="/receitas">
-          <button>Receitas</button>
+        
+        
+        <Link to="/criarreceita">
+          <button>Criar receita</button>
         </Link>
 
-        <Link to="/comentarios">
-          <button>Comentarios</button>
-        </Link>
+        
     </div>
 
 <Receitas/>

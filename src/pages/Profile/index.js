@@ -24,9 +24,13 @@ export function Profile() {
       <h1>{user.name}</h1>
       <p>{user.email}</p>
       
-      <Link to="/receitas">
-    <button>Receitas</button>
+      <Link to="/">
+    <button>Início</button>
   </Link>
+
+  <Link to="/criarreceita">
+          <button>Criar receita</button>
+        </Link>
       
       <button onClick={handleLogOut}>Sair</button>
 
