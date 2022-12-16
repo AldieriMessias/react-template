@@ -2,7 +2,7 @@ import { api } from "../../api/api"
 import { useState,useEffect,useContext } from "react"
 import { AuthContext  } from "../../contexts/authContext"
 import { Link, useNavigate } from "react-router-dom";
-import { CriarComentario } from "../CriarComentario";
+
 
 
 

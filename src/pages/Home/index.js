@@ -39,6 +39,10 @@ export function Home() {
           <button>Receitas</button>
         </Link>
 
+        <Link to="/comentarios">
+          <button>Comentarios</button>
+        </Link>
+
         </div>
           
           <h1>Receitas Proj3</h1>
